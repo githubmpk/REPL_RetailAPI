@@ -14,3 +14,6 @@ get and post data - save and retrival
 
 get by id / delete  by id
 (/api/v1/retaildata/{id})
+
+
+----still improvenmts can be done, I will update based on feedback.......
