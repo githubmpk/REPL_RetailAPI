@@ -1,10 +1,8 @@
 package com.retailservice.retailserviceapi.controller;
 
-import com.retailservice.retailserviceapi.entity.StoreData;
+import com.retailservice.retailserviceapi.model.RetailData;
 import com.retailservice.retailserviceapi.repository.RetailRepository;
-import org.apache.catalina.Store;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.EmptyStackException;
@@ -17,24 +15,24 @@ public class RetailController {
     private RetailRepository retailRepository;
 
     @GetMapping("/retaildata")
-    public List<StoreData> getStoreData() {
+    public List<RetailData> getStoreData() {
         return retailRepository.findAll();
     }
 
     @PostMapping("/retaildata")
-    public StoreData storeRetailData(@RequestBody StoreData storeData) {
+    public RetailData storeRetailData(@RequestBody RetailData storeData) {
         return retailRepository.save(storeData);
     }
 
     @GetMapping("/retaildata/{id}")
-    StoreData getById(@PathVariable Long id) {
+    RetailData getById(@PathVariable String id) {
 
         return retailRepository.findById(id)
                 .orElseThrow(() -> new EmptyStackException());
     }
 
     @DeleteMapping("/retaildata/{id}")
-    void deleteRetailData(@PathVariable Long id) {
+    void deleteRetailData(@PathVariable String id) {
         retailRepository.deleteById(id);
     }
 
