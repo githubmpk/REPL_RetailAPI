@@ -17,3 +17,9 @@ get by id / delete  by id
 
 
 ----still improvenmts can be done, I will update based on feedback.......
+
+
+
+------ 17/09/2020 --------------
+
+JPA updated.
